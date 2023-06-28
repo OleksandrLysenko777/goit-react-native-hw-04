@@ -40,8 +40,10 @@ import {
 } from "./RegistrationScreen.styled";
 import backgroundImg from "../../../assets/img/background.jpg";
 import CirclePlus from "../../../assets/svg/CirclePlus";
+import { useNavigation } from '@react-navigation/native';
 
 const RegistrationScreen = () => {
+   const navigation = useNavigation();
   const [isShowKeyboard, setIsShowKeyboard] = useState(false);
   const [isAvatar, setAvatar] = useState(null);
   const [isShowPassword, setIsShowPassword] = useState(false);
@@ -50,8 +52,9 @@ const RegistrationScreen = () => {
   const [login, setLogin] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleFocus = () => {
+  const handleFocus = (currentFocusInput = '') => {
     setIsShowKeyboard(true);
+     setCurrentFocused(currentFocusInput);
   };
   const clearUserForm = () => {
     setLogin("");
@@ -65,6 +68,7 @@ const RegistrationScreen = () => {
     console.log({ login, email, password, avatar });
 
     handleKeyboardHide();
+    navigation.navigate('Home', { user: { login, email, password } });
     clearUserForm();
   };
   const onLoadAvatar = async () => {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import {
   View,
   ImageBackground,
@@ -31,6 +32,7 @@ import {
 import backgroundImg from "../../../assets/img/background.jpg";
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
   const [isShowKeyboard, setIsShowKeyboard] = useState(false);
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [currentFocused, setCurrentFocused] = useState("");
@@ -51,10 +53,12 @@ const LoginScreen = () => {
     console.log({ email, password });
 
     handleKeyboardHide();
+    navigation.navigate("Home", { user: { email, password } });
     clearUserForm();
   };
-   const handleFocus = () => {
+  const handleFocus = (currentFocusInput = "") => {
     setIsShowKeyboard(true);
+    setCurrentFocused(currentFocusInput);
   };
   return (
     <TouchableWithoutFeedback onPress={handleKeyboardHide}>

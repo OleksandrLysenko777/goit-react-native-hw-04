@@ -1,22 +1,15 @@
 import * as React from "react";
-import Svg, { Rect } from "react-native-svg";
-const Grid = (props) => (
-  <Svg    
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="#212121"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    class="feather feather-Grid"
-    {...props}
-  >
-    <Rect x="3" y="3" width="7" height="7"></Rect>
-    <Rect x="14" y="3" width="7" height="7"></Rect>
-    <Rect x="14" y="14" width="7" height="7"></Rect>
-    <Rect x="3" y="14" width="7" height="7"></Rect>
+import Svg, { Path } from 'react-native-svg';
+const Grid = props => (
+  <Svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" {...props}>
+    <Path
+      stroke={props.stroke}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeOpacity={0.8}
+      d="M3 3h7v7H3V3Zm11 0h7v7h-7V3Zm0 11h7v7h-7v-7ZM3 14h7v7H3v-7Z"
+      clipRule="evenodd"
+    />
   </Svg>
 );
 export default Grid;
