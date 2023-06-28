@@ -32,11 +32,11 @@ export default function App() {
             screenOptions={{ headerShown: false }}
           >
             <MainStack.Screen
-              name="Regestration"
+              name="Registration"
               component={RegistrationScreen}
             />
-            <MainStack.Screen name="Login" component={LoginScreen} />
-            <MainStack.Screen name="Home" component={Home} />
+            <MainStack.Screen name="Login" component={LoginScreen} />            
+            <MainStack.Screen name="Home" component={Home} />           
           </MainStack.Navigator>
         </NavigationContainer>
       </View>

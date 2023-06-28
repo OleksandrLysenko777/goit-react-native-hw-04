@@ -103,8 +103,8 @@ const Home = () => {
               }}
             />
           ),
-          tabBarIcon: ({size, fill }) => {
-            return <User style={fill = "color"} size={size} />;
+          tabBarIcon: (props) => {
+            return <User fill={props.color} size={props.size} />;
           },
         })}
       />

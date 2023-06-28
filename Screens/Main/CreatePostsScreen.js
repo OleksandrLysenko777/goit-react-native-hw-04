@@ -69,7 +69,7 @@ const CreatePostsScreen = () => {
         }}
       >
         <View style={styles.loadWrapper}>
-          <ImageBackground style={styles.bgImage} source={postImg}>
+          <ImageBackground style={styles.bgImage} uri={postImg}>
             <TouchableOpacity
               style={{
                 ...styles.loadBtn,
@@ -128,17 +128,17 @@ const CreatePostsScreen = () => {
         <TouchableOpacity
           style={{
             ...styles.btn,
-            backgroundColor: !postImg || !postName || !postlocation ? '#f6f6f6' : '#ff6c00',
+            backgroundColor: !postImg || !postName || !postlocation ? '#FF6C00' : '#ff6c00',
           }}
           onPress={onSubmitPost}
         >
           <Text
             style={{
               ...styles.btnText,
-              color: !postImg || !postName || !postlocation ? '#bdbdbd' : '#ffffff',
+              color: !postImg || !postName || !postlocation ? '#ffffff' : '#ffffff',
             }}
           >
-            Опубліковати
+            Опублікувати
           </Text>
         </TouchableOpacity>
       </View>
@@ -240,5 +240,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     color: '#bdbdbd',
+    
   },
 });
