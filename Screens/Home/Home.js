@@ -16,6 +16,9 @@ const Home = () => {
   return (
     <ButtomTabs.Navigator
       screenOptions={() => ({
+        tabBarActiveTintColor: "#ff6c00",
+        tabBarInactiveTintColor: "#212121",
+        tabBarShowLabel: false,
         tabBarStyle: {
           height: 64,
           paddingTop: 10,
@@ -25,11 +28,6 @@ const Home = () => {
           justifyContent: "center",
         },
       })}
-      tabBarOptions={{
-        showLabel: false,
-        activeTintColor: "#ff6c00",
-        inactiveTintColor: "#212121",
-      }}
     >
       <ButtomTabs.Screen
         name="Posts"
@@ -77,7 +75,7 @@ const Home = () => {
             />
           ),
           tabBarIcon: () => {
-            return <CirclePlus style={fill="#ffffff"} />;
+            return <CirclePlus style={(fill = "#ffffff")} />;
           },
         })}
       />
